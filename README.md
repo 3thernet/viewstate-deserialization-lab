@@ -8,13 +8,12 @@
 
 ```bash
 git clone https://github.com/3thernet/viewstate-deserialization-lab.git
-cd viewstate-deserialization-lab
 ```
 
 ### 2. 配置IIS
 
-- 在 IIS 中创建一个新的应用程序池，并设置其 .NET CLR 版本为 **v4.0**。
-- 在 IIS 中创建一个新的网站，将根目录指向克隆的项目目录。
+- “启用或关闭 Windows 功能”，勾选"Internet Information Services"，展开选项继续勾选"万维网服务"->"应用程序开发功能"下的".NET Extensibility 4.8"和"ASP.NET 4.8"
+- 在 IIS 中创建一个新的网站，将物理目录指向克隆的项目目录。
 
 ### 3. 配置`Web.config`
 
@@ -24,17 +23,4 @@ cd viewstate-deserialization-lab
 <pages enableViewStateMac="true" viewStateEncryptionMode="Always" controlRenderingCompatibilityVersion="4.5"/>
 ```
 
-## 处理 HTTP 错误 404.3 - Not Found
-
-**由于扩展配置问题而无法提供您请求的页面。如果该页面是脚本，请添加处理程序。如果应下载文件，请添加 MIME 映射。**
-
-确保安装和启用必要的 IIS 功能，特别是 ASP.NET 和 .NET Framework 相关的功能。
-
-- 打开“控制面板” -> “程序和功能” -> “启用或关闭 Windows 功能”->“Internet Information Services“->“万维网服务“->“应用程序开发功能“。
-
-- 确保以下功能已启用：
-  
-  - `.NET Framework 4.x` （或项目使用的其他版本）
-  - `ASP.NET 4.x` 
-
-- 重启IIS服务器：`iisreset`
+# 
