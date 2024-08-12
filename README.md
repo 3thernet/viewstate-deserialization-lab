@@ -8,7 +8,7 @@
 
 ```bash
 git clone https://github.com/3thernet/viewstate-deserialization-lab.git
-cd viewstate-vulnerability-lab
+cd viewstate-deserialization-lab
 ```
 
 ### 2. 配置IIS
